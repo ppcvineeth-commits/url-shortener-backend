@@ -18,7 +18,7 @@ router.post('/shorten', async (req, res) => {
   const origUrl = req.body.origUrl || req.body.url || req.body.longUrl;
   
   // ✅ Added a fallback so it never becomes undefined
-  const baseUrl = process.env.BASE_URL || 'http://localhost:5000';
+  const baseUrl = process.env.BASE_URL || 'https://url-shortener-backend-8hol.onrender.com';
 
   if (!validUrl.isUri(origUrl)) {
     return res.status(400).json('Invalid URL format. Include http:// or https://');
